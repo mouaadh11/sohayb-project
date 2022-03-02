@@ -1,19 +1,10 @@
 #include<stdio.h>
-#include <windows.h>
-COORD coord = {0,0}; ///set the cordinate to 0, 0 (top-left corner of window);
-void gotoxy(int x, int y)
-{
-    coord.X = x;
-    coord.Y = y; /// X and Y coordinates
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-}
 int main()
 {
     int ch;
-    int chf=01;//choice of faculty
+
 main:
     system("cls");
-    gotoxy(0,0);
     printf("\n\t\t=================================================");
     printf("\n\t\t||    WELCOME TO UNIVERSITY MANAGEMENT SYSTEM  ||");
     printf("\n\t\t=================================================\n");
@@ -28,7 +19,7 @@ main:
         break;
     case 1:
         system("cls");
-        //int chf=01;//choice of faculty
+        int chf=01;//choice of faculty
         printf("\n\n\n\t\t\tFACULTIES MENU\n\t\t=================================\n\t\t[1] Add a new faculty\n\t\t[2] List all faculties\n\t\t[3] Search for faculties\n\t\t[4] Edit a faculty\n\t\t[5] Delete a faculty\n\t\t[0] Exit\n\t\t=================================\n\t\t");
         printf("Enter the choice:");
     scanf(" %d",&chf);
@@ -38,39 +29,131 @@ main:
         printf("\n\n\t\tAre you sure you want to exit?");
             break;
         case 1:system("cls");
-            printf("[1] Add a new faculty\n\t\t");
+            printf("=================================\n[1] Add a new faculty\n=================================\n");
+
             break;
         case 2:system("cls");
-            printf("[2] List all faculties\n\t\t");
+            printf("=================================\n[2] List all faculties\n=================================\n");
             break;
         case 3:system("cls");
-            printf("[3] Search for faculties\n\t\t ");
+            printf("=================================\n[3] Search for faculties\n=================================\n ");
             break;
         case 4:system("cls");
-            printf("[4] Edit a faculty\n\t\t");
+            printf("=================================\n[4] Edit a faculty\n=================================\n");
             break;
         case 5:system("cls");
-            printf("[5]  Delete a faculty\n\t\t");
+            printf("=================================\n[5]  Delete a faculty\n=================================\n");
             break;
         default:system("cls");
             printf("Invalid choice");
             break;
         }
+        break;
     case 2:
         system("cls");
         printf("\n\n\n\t\t\tDEPERTMENT MENU\n\t\t=================================\n\t\t[1] Add a new department\n\t\t[2] List all departments\n\t\t[3] Search for departments\n\t\t[4] Edit a department\n\t\t[5] Delete a department\n\t\t[0] Exit\n\t\t=================================\n\t\t");
+        int chd=01;//choice of department
+        printf("Enter the choice:");
+    scanf(" %d",&chd);
+        switch(chd)
+        {
+        case 0:system("cls");
+        printf("\n\n\t\tAre you sure you want to exit?");
+            break;
+        case 1:system("cls");
+            printf("=================================\n[1] Add a new department\n=================================\n");
+            break;
+        case 2:system("cls");
+            printf("=================================\n[2] List all departments\n=================================\n");
+            break;
+        case 3:system("cls");
+            printf("=================================\n[3] Search for departments\n=================================\n ");
+            break;
+        case 4:system("cls");
+            printf("=================================\n[4] Edit a department\n=================================\n");
+            break;
+        case 5:system("cls");
+            printf("=================================\n[5]  Delete a department\n=================================\n");
+            break;
+        default:system("cls");
+            printf("Invalid choice");
+            break;
+        }
         break;
     case 3:
         system("cls");
         printf("\n\n\n\t\t\tSECTION MENU\n\t\t=================================\n\t\t[1] Add a new section\n\t\t[2] List all sections\n\t\t[3] Search for sections\n\t\t[4] Edit a sections\n\t\t[5] Delete a sections\n\t\t[0] Exit\n\t\t=================================\n\t\t");
+        int chs=01;//choice of section
+        printf("Enter the choice:");
+    scanf(" %d",&chs);
+        switch(chs)
+        {
+        case 0:system("cls");
+        printf("\n\n\t\tAre you sure you want to exit?");
+            break;
+        case 1:system("cls");
+            printf("=================================\n[1] Add a new section\n=================================\n");
+            break;
+        case 2:system("cls");
+            printf("=================================\n[2] List all sections\n=================================\n");
+            break;
+        case 3:system("cls");
+            printf("=================================\n[3] Search for section\n=================================\n ");
+            break;
+        case 4:system("cls");
+            printf("=================================\n[4] Edit a section\n=================================\n");
+            break;
+        case 5:system("cls");
+            printf("=================================\n[5]  Delete a section\n=================================\n");
+            break;
+        default:system("cls");
+            printf("Invalid choice");
+            break;
+        }
         break;
     case 4:
         system("cls");
+int chhf;//choice of head of faculty
         printf("\n\n\n\t\t\tHEAD FACULTY MENU\n\t\t=================================\n\t\t[1] The head of faculty\n\t\t[2] Edit the head of faculty\n\t\t[0] Exit\n\t\t=================================\n\t\t");
+         printf("Enter the choice:");
+    scanf(" %d",&chhf);
+        switch(chhf)
+        {
+        case 0:system("cls");
+        printf("\n\n\t\tAre you sure you want to exit?");
+            break;
+        case 1:system("cls");
+            printf("=================================\n[1] The head of faculty\n=================================\n");
+            break;
+        case 2:system("cls");
+            printf("=================================\n[2] Edit the head of faculty\n=================================\n");
+            break;
+        default:system("cls");
+            printf("Invalid choice");
+            break;
+        }
         break;
     case 5:
+        int chhd;//choice of head of faculty
         system("cls");
         printf("\n\n\n\t\t\tHEAD DEPERTMENT MENU\n\t\t=================================\n\t\t[1] The head of department\n\t\t[2] Edit the head of department\n\t\t[0] Exit\n\t\t=================================\n\t\t");
+                 printf("Enter the choice:");
+    scanf(" %d",&chhd);
+        switch(chhd)
+        {
+        case 0:system("cls");
+        printf("\n\n\t\tAre you sure you want to exit?");
+            break;
+        case 1:system("cls");
+            printf("=================================\n[1] The head of department\n=================================\n");
+            break;
+        case 2:system("cls");
+            printf("=================================\n[2] Edit the head of department\n=================================\n");
+            break;
+        default:system("cls");
+            printf("Invalid choice");
+            break;
+        }
         break;
     default:
 
