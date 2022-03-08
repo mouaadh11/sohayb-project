@@ -56,5 +56,5 @@ int main()
         }
        fclose(f);
     }
-
+fclose(ft);
 }
