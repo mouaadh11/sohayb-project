@@ -8,7 +8,8 @@ main:
     printf("\n\t\t=================================================");
     printf("\n\t\t||    WELCOME TO UNIVERSITY MANAGEMENT SYSTEM  ||");
     printf("\n\t\t=================================================\n");
-    printf("\n\n\n\t\t\tMAIN MENU\n\t\t=================================\n\t\t[1] Faculties\n\t\t[2] Departments\n\t\t[3] Sections\n\t\t[4] Head of faculty\n\t\t[5] Head of department\n\t\t[0] Exit\n\t\t=================================\n\t\t");
+    sleep(1);
+    printf("\n\t\t\tMAIN MENU\n\t\t=================================\n\t\t[1] List all faculties\n\t\t\t[2] Manage faculties\n\t\t[3] List all Head of faculties\n\t\t\t[4] Manage head faculties\n\t\t[5]department\n\t\t[0] Exit\n\t\t=================================\n\t\t");
     printf("Enter the choice:");
     scanf("%d",&ch);
     switch (ch)
@@ -20,7 +21,7 @@ main:
     case 1:
         system("cls");
         int chf=01;//choice of faculty
-        printf("\n\n\n\t\t\tFACULTIES MENU\n\t\t=================================\n\t\t[1] Add a new faculty\n\t\t[2] List all faculties\n\t\t[3] Search for faculties\n\t\t[4] Edit a faculty\n\t\t[5] Delete a faculty\n\t\t[0] Exit\n\t\t=================================\n\t\t");
+        printf("\n\n\n\t\t\tFACULTIES MENU\n\t\t=================================\n\t\t[1] Manage faculties\n\t\t[2] Manage head faculties\n\t\t[3] Search for faculties\n\t\t[4] Edit a faculty\n\t\t[5] Delete a faculty\n\t\t[0] Exit\n\t\t=================================\n\t\t");
         printf("Enter the choice:");
     scanf(" %d",&chf);
         switch(chf)
