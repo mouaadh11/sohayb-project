@@ -4,6 +4,7 @@ int main()
 {
 
     FILE* ft=fopen ("mouaadhtemp.txt","w+");
+    FILE* fl=fopen ("mouaadhlist.txt","a");
     char fa[100];
     char d[20];
     char s[20];
@@ -32,6 +33,7 @@ int main()
             break;
         FILE  *f =fopen(fa,"w");
         fprintf(f,"f:%s\n",fa);
+        fprintf(fl,"f:%s\n",fa);
         fflush(stdin);
         for(;;)
         {
@@ -42,6 +44,7 @@ int main()
                 break;
             else{
             fprintf(f,"d:%s\n",d);
+            fprintf(fl,"\td:%s\n",d);
             fflush(stdin);}
             //nnjmou nzidou kima nbghou ida mabghinach 3added
             printf("To exit enter blank space in the name input\n");
@@ -51,6 +54,7 @@ int main()
                 break;
             else
                 fprintf(f,"s:%s\n",s);
+                fprintf(fl,"\ts:%s\n",s);
             fflush(stdin);
             printf("\n");
         }

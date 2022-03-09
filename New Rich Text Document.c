@@ -4,7 +4,7 @@ int main ()
     char fa[100];
     char d[20];
     char s[20];
-   printf("enter the name of file");
+   printf("enter the name of file :");
    scanf("%[^\n]%*c",&fa);
     FILE* f=fopen(fa,"r");
     fscanf(f,"%s\n",&fa);
@@ -13,6 +13,5 @@ int main ()
             fscanf(f,"%s\n%s",&d,&s);
             printf("d:%s\ns:%s\n",d,s);
             }while(!feof(f));
-
 fclose(f);
 }
