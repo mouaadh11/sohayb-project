@@ -68,30 +68,37 @@ int main()
     while(!feof(fl));
     break;
     case 2:
-    fscanf(f,"\n%s\n",&fa);
-    printf("enter the new name of faculty:");
-    fprintf(ft,"\n%s\n",fa);
+        int choix;
+        f=fopen(e,"r");
+            fscanf(f,"\n%s\n",&fa);
+            fprintf(ft,"%s\n",fa);
+            printf("fa:%s\n",fa);
+                printf("enter the number of depertement");
+                scanf("%d",&choix);
+                int i=1;
     do
     {
-        fscanf(f,"%s\n%s\n",&d,&s);
-        printf("enter the new name of depertement :");
-        scanf(" %[^\n]",&nd);
-        printf("enter the new number of section :");
-        scanf(" %[^\n]",&ns);
-        fprintf(ft,"\n%s\n%s",nd,ns);
-        printf("d:%s\ns:%s\n",nd,ns);
+
+                fscanf(f,"%s\n%s\n",&d,&s);
+                if (i == choix){
+                printf("..::enter the new name of depertement :");
+                scanf(" %[^\n]",&nd);
+                printf("enter the new number of section :");
+                scanf(" %[^\n]",&ns);
+                fprintf(ft,"\n%s\n%s",nd,ns);
+                printf("d[%d]:%s\ns[%d]:%s\n",i,nd,i,ns);
+                }
+                else
+                    {
+
+                fprintf(ft,"\n%s\n%s",d,s);
+                printf("d [%d]:%s\ns [%d]:%s\n",i,d,i,s);
+                    }
+                i++;
+
     }
     while(!feof(f));
-    do
-    {
-        fscanf(fl,"\n%s\n",&fa);
-        printf("fa:%s\n%s\n%s\n",fa,e,nfa);
-        if (strcmpi(e,fa)==0)
-        fprintf(flt,"\n%s\n",nfa);
-        else
-         fprintf(flt,"\n%s\n",fa);
-    }
-    while(!feof(fl));
+    break;
     }
 
     /*fscanf(f,"\n%s\n",&fa);
@@ -127,8 +134,15 @@ int main()
     rename("mouaadhlisttemp.txt","mouaadhlist.txt");
     fclose(f);
     fclose(ft);
+
+    switch(ch){
+case 1:
     remove(e);
     rename("mouaadhtemp.txt",nfa);
-
+    break;
+    case 2:
+    remove(e);
+    rename("mouaadhtemp.txt",fa);
+    break;}
     return 0;
 }
