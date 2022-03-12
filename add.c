@@ -22,7 +22,8 @@ int main()
     fprintf(ft,"%s\t%s\t%s\t",d,C,e);
     fclose(f);
     fclose(ft);
-    remove("mouaadh.txt");
+    remove("mouaadh.txt
+           ");
     rename("mouaadhtemp.txt","mouaadh.txt");*/
     for (;;)
     {
@@ -32,8 +33,8 @@ int main()
         if(stricmp(fa,"")==0 || stricmp(fa," ")==0)
             break;
         FILE  *f =fopen(fa,"w");
-        fprintf(f,"f:%s\n",fa);
-        fprintf(fl,"f:%s\n",fa);
+        fprintf(f,"%s\n",fa);
+        fprintf(fl,"%s\n",fa);
         fflush(stdin);
         for(;;)
         {
@@ -43,8 +44,8 @@ int main()
             if(stricmp(d,"")==0 || stricmp(d," ")==0)
                 break;
             else{
-            fprintf(f,"d:%s\n",d);
-            fprintf(fl,"\td:%s\n",d);
+            fprintf(f,"%s\n",d);
+            //fprintf(fl,"\td:%s\n",d);
             fflush(stdin);}
             //nnjmou nzidou kima nbghou ida mabghinach 3added
             printf("To exit enter blank space in the name input\n");
@@ -53,12 +54,12 @@ int main()
             if(stricmp(d,"")==0 || stricmp(d," ")==0)
                 break;
             else
-                fprintf(f,"s:%s\n",s);
-                fprintf(fl,"\ts:%s\n",s);
+                fprintf(f,"%s\n",s);
+                //fprintf(fl,"\ts:%s\n",s);
             fflush(stdin);
             printf("\n");
         }
        fclose(f);
     }
-fclose(ft);
+fclose(fl);
 }

@@ -9,7 +9,7 @@ int main()
     char fas[100];
     FILE* fl=fopen("mouaadhlist.txt","r");
 
-   /* fscanf(f,"%s\n",&fa);
+   fscanf(f,"%s\n",&fa);
     printf("fa:%s\n",fa);*/
     do
     {

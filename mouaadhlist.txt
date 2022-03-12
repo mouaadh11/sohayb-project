@@ -1,8 +1,0 @@
-math&informatique
-	mi
-	3
-	sm
-	13
-social
-	oop
-	9

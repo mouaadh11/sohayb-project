@@ -7,10 +7,10 @@ int main ()
    printf("enter the name of file :");
    scanf("%[^\n]%*c",&fa);
     FILE* f=fopen(fa,"r");
-    fscanf(f,"%s\n",&fa);
+    fscanf(f,"\n%s\n",&fa);
     printf("fa:%s\n",fa);
     do {
-            fscanf(f,"%s\n%s",&d,&s);
+            fscanf(f,"%s\n%s\n",&d,&s);
             printf("d:%s\ns:%s\n",d,s);
             }while(!feof(f));
 fclose(f);
