@@ -41,10 +41,11 @@ main:
         fclose(fl);
         printf("======================================================================\n");
         printf("see more details \n enter the name of faculty to see it :\n");//MORE DETAILS//
-        printf("..::To exit enter blank space in the name input\n");
+        printf("..::To exit enter 0 in the name input\n");
         printf("..::enter the name of faculty:");
         scanf(" %[^\n]",&fa);
-
+        if(stricmp(fa,"0")==0 || stricmp(fa," ")==0)
+        break;
 
         FILE* f=fopen(fa,"r");//FACULTY FILE//
         if(f == NULL)
@@ -178,7 +179,7 @@ main:
             do
             {
                 fscanf(fl,"\n%s\n",&fa);
-                printf("fa:%s\n%s\n%s\n",fa,e,nfa);
+                //printf("fa:%s\n%s\n%s\n",fa,e,nfa);
                 if (strcmp(e,fa)==0)
                     fprintf(flt,"\n%s\n",nfa);
                 else
