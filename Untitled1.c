@@ -130,19 +130,19 @@ int main()
 
     fclose(flt);
     fclose(fl);
-    remove("mouaadhlist.txt");
-    rename("mouaadhlisttemp.txt","mouaadhlist.txt");
-    fclose(f);
-    fclose(ft);
+
 
     switch(ch){
 case 1:
     remove(e);
     rename("mouaadhtemp.txt",nfa);
+     remove("mouaadhlist.txt");
+    rename("mouaadhlisttemp.txt","mouaadhlist.txt");
+    fclose(f);
+    fclose(ft);
     break;
-    case 2:
-    remove(e);
-    rename("mouaadhtemp.txt",fa);
-    break;}
+case 2:
+    fclose(f);
+    fclose(ft);
     return 0;
 }
