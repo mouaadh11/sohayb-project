@@ -7,13 +7,19 @@ int main()
     char d[20];//DEPEREMENT//
     char s[20];//SECTION//
     char e[100];//JUST FOR HELP//
+    system("cls");
+    printf("\n\n\n\n\n");
+    printf("\n\t\t\t\t***************************************************");
+    printf("\n\t\t\t\t*=================================================*");
+    printf("\n\t\t\t\t*||    WELCOME TO UNIVERSITY MANAGEMENT SYSTEM  ||*");
+    printf("\n\t\t\t\t*=================================================*\n");
+    printf("\t\t\t\t***************************************************\n");
+    sleep(3);
+    printf("\a\t\a\n\n\n\t\t\tThis program does not support entering espace in names\n\t\t\tYou can use the symbol _ instead of space");
+    sleep(7);
 main:
     system("cls");
-    printf("\n\t\t=================================================");
-    printf("\n\t\t||    WELCOME TO UNIVERSITY MANAGEMENT SYSTEM  ||");
-    printf("\n\t\t=================================================\n");
-    sleep(1);
-    printf("\n\t\t\tMAIN MENU\n\t\t=================================\n\t\t[1] Faculties and institute\n\t\t[2] Manage faculties and institute\n\t\t[0] Exit\n\t\t=================================\n\t\t");
+    printf("\n\t\t\t**MAIN MENU**\n\t\t=================================\n\t\t[1] Faculties and institute\n\t\t[2] Manage faculties and institute\n\t\t[0] Exit\n\t\t=================================\n\t\t");
     printf("Enter the choice:");
     scanf("%d",&ch);
     switch(ch)
@@ -30,14 +36,13 @@ main:
         {
             printf("doesn't existe any faculties yet");
             break;
-        }
+        }int number=1;
         do
         {
             fscanf(fl,"\n%s\n",&fa);
-            if(fa==NULL)printf("ERROR");
-            printf("fa:%s\n",fa);
-        }
-        while(!feof(fl));
+            if(fa==NULL) printf("ERROR");
+            printf("faculty %d:%s\n",number,fa);number++;
+        }while(!feof(fl));
         fclose(fl);
         printf("======================================================================\n");
         printf("see more details \n enter the name of faculty to see it :\n");//MORE DETAILS//
@@ -53,24 +58,26 @@ main:
             printf("\t..::doesn't existe::..");
             break;
         }
+
         else
-            fscanf(f,"\n%s\n",&fa);
-        printf("fa:%s\n",fa);
+            fscanf(f,"\n%s\n",&fa);system("cls");
+        printf("faculty:%s\n",fa);
         do
         {
             fscanf(f,"%s\n%s\n",&d,&s);
-            printf("d:%s\ns:%s\n",d,s);
+            printf("  Departement:%s\n    Number of sections:%s\n",d,s);
         }
         while(!feof(f));
         fclose(f);
         break;
     case 2: //***************************************MANAGE********************************//
         system("cls");
+        retor:
         printf("\n\t\t=================================================");
         printf("\n\t\t||           MANAGE THE FACULTY                ||");
         printf("\n\t\t=================================================\n");
         sleep(1);
-        printf("\n\t\t\tMAIN MENU\n\t\t=================================\n\t\t[1] ADD\n\t\t[2] SEARCH\n\t\t[3] UPDATE\n\t\t[4] DELETE\n\t\t[0] EXIT\n\t\t=================================\n\t\t");
+        printf("\n\t\t\tMAIN MENU\n\t\t=================================\n\t\t[1] ADD\n\t\t[2] SEARCH\n\t\t[3] UPDATE\n\t\t[4] DELETE\n\t\t[5] BACK\n\t\t[0] EXIT\n\t\t=================================\n\t\t");
         printf("Enter the choice:");
         scanf("%d",&ch);
         switch(ch)
@@ -135,7 +142,8 @@ main:
             }
             else
                 fscanf(f,"\n%s\n",&fa);
-            printf("fa:%s\n",fa);
+            printf("fa:%s\n",fa);//here
+
             do
             {
                 fscanf(f,"%s\n%s\n",&d,&s);
@@ -145,6 +153,7 @@ main:
             fclose(f);
             break;
         case 3://***************************************UPDATE********************************//
+            system("cls");
             FILE* ft=fopen ("mouaadhtemp.txt","w+");//FILE FACULTY TEMPORARY//
             FILE* fl=fopen ("mouaadhlist.txt","r");//LIST FILE//
             FILE* flt=fopen ("mouaadhlisttemp.txt","w");//LIST FILE TEMPORARY//
@@ -205,12 +214,13 @@ main:
                 return 0;
             }
             else
+
             fscanf(f,"\n%s\n",&fa);
-            printf("fa:%s\n",fa);
+            printf("faclty:%s\n",fa);
             do
             {
                 fscanf(f,"%s\n%s\n",&d,&s);
-                printf("d:%s\ns:%s\n",d,s);
+                printf("  dertement:%s\n     section:%s\n",d,s);
             }
             while(!feof(f));
             fclose(f);
@@ -227,7 +237,7 @@ main:
             printf("..::enter the new name of faculty:");
             scanf(" %[^\n]",&nfa);
             fprintf(ft,"%s\n",nfa);
-            printf("fa:%s\n",nfa);
+            printf("faclty:%s\n",nfa);
     do
     {
                 fscanf(f,"%s\n%s\n",&d,&s);
@@ -236,32 +246,39 @@ main:
                 printf("enter the new number of section :");
                 scanf(" %[^\n]",&ns);
                 fprintf(ft,"\n%s\n%s",nd,ns);
-                printf("d:%s\ns:%s\n",nd,ns);
+                //printf("d:%s\ns:%s\n",nd,ns);
     }
     while(!feof(f));
     do
     {
         fscanf(fl,"\n%s\n",&fa);
-        printf("fa:%s\n%s\n%s\n",fa,e,nfa);
+        //printf("fa:%s\n%s\n%s\n",fa,e,nfa);
         if (strcmpi(e,fa)==0)
         fprintf(flt,"\n%s\n",nfa);
         else
          fprintf(flt,"\n%s\n",fa);
     }
     while(!feof(fl));
+    fclose(flt);
+    fclose(fl);
+    fclose(f);
+    fclose(ft);
+    remove(e);
+    remove("mouaadhlist.txt");
+    rename("mouaadhtemp.txt",nfa);
+    rename("mouaadhlisttemp.txt","mouaadhlist.txt");
     break;
     case 2:
         int choix;
         f=fopen(e,"r");
             fscanf(f,"\n%s\n",&fa);
             fprintf(ft,"%s\n",fa);
-            printf("fa:%s\n",fa);
-                printf("enter the number of depertement");
+            //printf("fa:%s\n",fa);
+                printf("enter the number of depertement: ");
                 scanf("%d",&choix);
                 int i=1;
     do
     {
-
                 fscanf(f,"%s\n%s\n",&d,&s);
                 if (i == choix){
                 printf("..::enter the new name of depertement :");
@@ -273,17 +290,24 @@ main:
                 }
                 else
                     {
-
                 fprintf(ft,"\n%s\n%s",d,s);
-                printf("d [%d]:%s\ns [%d]:%s\n",i,d,i,s);
+                //printf("d [%d]:%s\ns [%d]:%s\n",i,d,i,s);
                     }
                 i++;
-
     }
     while(!feof(f));
+    fclose(flt);
+    fclose(fl);
+    fclose(f);
+    fclose(ft);
+    remove(e);
+    remove("mouaadhlist.txt");
+    ////////
+    //printf("\n\\e:%s\\\n",&e);
+    rename("mouaadhtemp.txt",fa);
+    rename("mouaadhlisttemp.txt","mouaadhlist.txt");
     break;
     }
-
     /*fscanf(f,"\n%s\n",&fa);
     printf("enter the new name of faculty:");
     scanf(" %[^\n]",&nfa);
@@ -310,8 +334,7 @@ main:
          fprintf(flt,"\n%s\n",fa);
     }
     while(!feof(fl));*/
-
-    fclose(flt);
+    /*fclose(flt);
     fclose(fl);
 
     switch(ch){
@@ -328,7 +351,7 @@ case 2:
     fclose(f);
     fclose(ft);
 }
-
+*/
             break;
         case 4://***************************************DELETE*******************************//
             system("cls");
@@ -358,6 +381,8 @@ case 2:
             remove("mouaadhlist.txt");
             rename("mouaadhlisttemp.txt","mouaadhlist.txt");
             remove(e);
+            break;
+            case 5: goto main;
             break;
         case 0:
             system("cls");
